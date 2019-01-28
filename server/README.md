@@ -41,18 +41,7 @@ to constantly configure a composer.json file for dependencies or load
 helper files, separate the config into an environment based structure, 
 initiate the REST Controller library, add a `MY_Model` file, monitor my dependencies, etc, etc, etc. Please 
 note, that this boilerplate is geared towards building only APIs and not initially built  for User Interface 
-mechanics (although that still can be done). 
-
-After installation, run the sessions migration,
-switch to database sessions and go to `http://mysite.com/sessions` in a Postman 
-style app or via cURL, etc and test out a real time demonstration of this project.
-Alternately, you can visit the Postman docs of this very example by going to this [link](https://documenter.getpostman.com/view/1486787/RznBMKeo)
-
-I hope everyone enjoys this and finds it useful. Please feel free to offer
-any advice or issue PRs and fixes where you see fit. All credit for the 
-Codeigniter framework goes to the Codeigniter team at BCIT and credit for
-the composer dependencies goes to their respective authors. Without their
-work, this would've been a lot more difficult of an approach =)
+mechanics (although that still can be done).
 
 ## Folder Structure
 
