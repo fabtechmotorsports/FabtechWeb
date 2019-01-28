@@ -149,6 +149,7 @@ If you want database sessions, and to use the included API examples:
 
 ## Other notes
 - Please read the docs of the Luthier-CI package if you've questions regarding routing and middleware. You can find the docs for that plugin [here](https://github.com/ingeniasoftware/luthier-ci)
+- In order to run on an ODBC connection, it is highly advised that the ODBC Driver from CodeIgniter 3.0.6 replaces the current 3.1.9 driver so that the API may use it in conjunction with the Query Builder. Even with known security issues in the ODBC driver and Query Builder, this API will be operating on an intranet with no external access.
 - Update files manually that exist inside of the `application` folder as well as a modified version of the `index.php` 
  file if it exists
   - Check the [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/installation/upgrading.html) for more information.
@@ -205,19 +206,3 @@ Examples
 $ php index.php luthier migrate reverse
 $ php index.php luthier migrate refresh
 ````
-
-# TODO's
-A small list of things I would like to do by the version 1.1.0 release:
-
- - ~~A small example using Codeigniter sessions.~~ (Released in v1.0.0)
-   - ~~Migration file~~
-   - ~~A controller~~
-   - ~~A model~~
-   - ~~Routes~~
-   - ~~Docs~~
- - An example representation of authentication
-   - Using an AuthMiddleware
-     - Using basic auth
-     - Using digest auth 
-     - Using JWT for Auth
-     - Using OAuth2 (maybe)
