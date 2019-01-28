@@ -23,8 +23,8 @@ small scaffold for my API based projects and tried making it as
 un-opinionated as possible. It contains a number of cool features for REST 
 APIs such as a built-in JWT library, static routes and middleware brought to us by the amazing 
 `Luthier-CI` package, a proper REST Controller library brought to us by Phil Sturgeon
-and Chris Kacerguis, a small but useful `MY_Controller` and an amazing 
-`MY_Model` brought to us by Avenir. Also included is a cool assortment of
+and Chris Kacerguis, a small but useful `MY_Controller` and a 
+`MY_Model` class to help with repetetive database interactivity. Also included is a cool assortment of
 composer dependencies and integration for libraries like `Monolog` PSR3 
 Logger library, Dotenv by Vance Lucas for Environment configuration and 
 Whoops Errors for Cool Kids for API/UI errors during development as well as a 
@@ -98,7 +98,7 @@ ROOT/
 
 ## Includes
  - Built-in `JWT` Library and JWT Library by  [Firebase](https://github.com/firebase/php-jwt)
- - `MY_Model` by [Avenir](https://github.com/avenirer/CodeIgniter-MY_Model)
+ - `MY_Model`
  - `Monolog` PSR3 Logger Integration
  - `MY_Controller` for REST API calls
  - `constants.php` with some extra goodies
