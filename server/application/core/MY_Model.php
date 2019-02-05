@@ -662,7 +662,7 @@ class MY_Model extends CI_Model
         if ($query->num_rows() > 0) {
             return trim_array($query->result_array());
 
-        // Return false otherwise
+            // Return false otherwise
         } else {
             return false;
         }
@@ -714,7 +714,7 @@ class MY_Model extends CI_Model
             // The trimmed result array
             return trim_array($query->result_array());
 
-        // Return false otherwise
+            // Return false otherwise
         } else {
             return false;
         }
@@ -731,10 +731,10 @@ class MY_Model extends CI_Model
             {$this->_table}.item_desc_1,
             {$this->_table}.item_desc_2,
         ")
-        ->from("
+                 ->from("
             {$this->_p_dbo}.dbo.{$this->_table} {$this->_table}
         ")
-        ->where("
+                 ->where("
             {$this->_table}.item_no = '{$comp_item_no}'
         ");
         // Conduct the query

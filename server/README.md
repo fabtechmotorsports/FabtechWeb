@@ -1,9 +1,6 @@
  # CodeIgniter REST API Boilerplate
- ## [Version 1.0.0](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases/tag/1.0.0)
  
- This is an MVC boilerplate for REST APIs powered by PHP, JWT, Composer and Codeigniter 3. If you'd like to see the Postman docs for the provided 
- `Sessions` and `Home` examples, you can visit this [link](https://documenter.getpostman.com/view/1486787/RznBMKeo). To check out the official 
- versioned releases of this repo, go [here](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases).
+  - The current stable version is [v.1.1.0](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases/tag/1.1.0)
 
 # T.O.C (Table of Contents)
  - [Synopsis](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#synopsis)
@@ -16,32 +13,39 @@
  - [Other notes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#other-notes)
  - [CLI Commands](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#cli-commands)
  - [TODO's](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#todos)
+ - [License](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#license)
  
 # Synopsis
-This is a boilerplate for REST APIs using Codeigniter 3. I built this as a 
-small scaffold for my API based projects and tried making it as 
+
+ 
+This is an MVC boilerplate for REST APIs powered by PHP, JWT, Composer and Codeigniter 3 with CLI based code generation. If you'd like to see the Postman docs for the provided `Sessions`, `Home` & `JWT` examples, you can visit this [link](https://documenter.getpostman.com/view/1486787/RznBMKeo). To check out the official versioned releases of this repo, go [here](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases).
+
+I primarily build APIs and I absolutely love working with the 
+CodeIgniter framework and I wanted to keep the DRY KISS approach in all of my future API projects, while modernizing CodeIgniter 3
+to allow it to be used for years to come with best practices at the forefront of boilerplate's design and structure.
+This is due to me wanting to eliminate the need to repeat tasks that are common when setting up an API focused
+'micro-framework' using Codeigniter.  
+
+I built this as a small scaffold for my API based projects and tried making it as 
 un-opinionated as possible. It contains a number of cool features for REST 
 APIs such as a built-in JWT library, static routes and middleware brought to us by the amazing 
 `Luthier-CI` package, a proper REST Controller library brought to us by Phil Sturgeon
-and Chris Kacerguis, a small but useful `MY_Controller` and a 
-`MY_Model` class to help with repetetive database interactivity. Also included is a cool assortment of
+and Chris Kacerguis, a small but useful `MY_Controller` and an extensive 
+`MY_Model`. Also included is a cool assortment of
 composer dependencies and integration for libraries like `Monolog` PSR3 
 Logger library, Dotenv by Vance Lucas for Environment configuration and 
 Whoops Errors for Cool Kids for API/UI errors during development as well as a 
 series of helper files, hooks and migrations to make the instantiation of REST 
-APIs far quicker and far more simple.
+APIs far quicker and far more simple. 
 
-I built this because I primarily build APIs and I absolutely love working with the CodeIgniter framework.
-Also this was built to keep the DRY KISS approach in all of my future API projects, while modernizing CodeIgniter 3
-to allow it to be used for years to come with best practices at the forefront of boilerplate's design and structure.
-This is due to me wanting to eliminate the need to constantly adjust the Codeigniter 
-folder structure and move the application directory outside of the publicly
-accessible scope and to eliminate the need to repeat tasks like the need 
-to constantly configure a composer.json file for dependencies or load 
-helper files, separate the config into an environment based structure, 
-initiate the REST Controller library, add a `MY_Model` file, monitor my dependencies, etc, etc, etc. Please 
-note, that this boilerplate is geared towards building only APIs and not initially built  for User Interface 
-mechanics (although that still can be done).
+Please note, that this boilerplate is geared towards building only APIs and not initially built  for User Interface 
+mechanics (although that can still be done). 
+
+I hope everyone enjoys this and finds it useful. Please feel free to offer
+any advice or issue PRs and fixes where you see fit. All credit for the 
+Codeigniter framework goes to the Codeigniter team at BCIT and credit for
+the composer dependencies goes to their respective authors. Without their
+work, this would've been a lot more difficult of a task =)
 
 ## Folder Structure
 
@@ -80,29 +84,28 @@ ROOT/
  - [Whoops Error Handler](https://github.com/filp/whoops)
  - [Standard Exceptions](https://github.com/crazycodr/standard-exceptions)
  - [Php Dotenv Library](https://github.com/vlucas/phpdotenv)
- - [Firebase-JWT](https://github.com/firebase/php-jwt)
  - [Luthier-CI](https://github.com/ingeniasoftware/luthier-ci)
  - [Monolog](https://github.com/Seldaek/monolog)
  - [Faker](https://github.com/fzaninotto/Faker)
 
 ## Includes
- - Built-in `JWT` Library and JWT Library by  [Firebase](https://github.com/firebase/php-jwt)
- - `MY_Model`
- - `Monolog` PSR3 Logger Integration
- - `MY_Controller` for REST API calls
- - `constants.php` with some extra goodies
- - Luthier routing for Codeigniter 3
+ - A built-in `JWT` Library (See the example [Controller](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/controllers/JWTController.php), [Routes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/routes/api.php#L13) & [Docs](https://documenter.getpostman.com/view/1486787/RznBMKeo#3835e400-9fbc-4b9b-b90d-7a46da6e891d))
+ - A Powerful `MY_Model` class brought to us by [Avenir](https://github.com/avenirer/CodeIgniter-MY_Model)
+ - Code Generator for Controllers, Middleware, Models, Helpers, Migrations and Libraries
+ - `MY_Log` file for `Monolog` PSR3 Logger Integration
+ - A simple `MY_Controller` class to extend for basic REST usage
+ - A revised `constants.php` with some cool, extra goodies
+ - Luthier routing/middleware for Codeigniter 3
  - Chris Kacerguis/Phil Sturgeon's REST Library
  - Complete composer dependency control
  - Most commonly used libraries/helpers are autoloaded
  - Whoops Errors for Cool Kids integration
  - PHP Dotenv library integration
- - Proper environmental configuration setup
- - A series of robust helper files from CLI to Databases
- - Migration files for ci_sessions and the REST Library
- - Example Controller, Model, Migration and Routes to demonstrate the API
- - Example Postman documentation for the aforementioned example included in the Repo
- - And much more... take a look!
+ - A series of robust helper files from CLI's to Databases
+ - Migration files for all of the database tables, including `ci_sessions` and the REST Library
+ - Example Controller, Route, Model and Migration files to demonstrate the API
+   - Example Postman documentation for this is included [here](https://documenter.getpostman.com/view/1486787/RznBMKeo#3835e400-9fbc-4b9b-b90d-7a46da6e891d)
+ - And much more... It is best to just go ahead and take a look!
  
 ## Project Setup
 ### Install Dependencies
@@ -129,18 +132,17 @@ Navigate to localhost:8080 to run the development server
 2. Ensure that your web server 'points' to the `public_html` directory
  - Do NOT access the `public_html` directory directly from your browser [EG - `http:/mysite.com/public_html/`]. Always set your web server to 'point' to your `public_html` directory. This is done for security reasons.
 3. `$ cd path/to/application` and then run the `composer install` command
-4. Go to `application/config/ENVIRONMENT/database.php` and enter your database credentials (Where ENVIRONMENT is the environment you want to connect a database with, EG - production)
 
 If you want database sessions, and to use the included API examples:
-1. Go to `application/config/ENVIRONMENT/config.php` and change the session type to database sessions located on `line 382` (Where ENVIRONMENT is the environment you want to configure the sessions for)
-2. Open your command line tool (EG - Git Bash) and run `$ cd path/to/public_html` then run the migration command `$ php index.php luthier migrate`
-3. Access your new API and Enjoy!
+1. Go to `application/config/ENVIRONMENT/database.php` and enter your database credentials
+2. Go to `application/config/ENVIRONMENT/config.php` and change the session type to database sessions located on `line 382`
+3. Open your command line tool (EG - Git Bash) and run `$ cd path/to/public_html` then run the migration command `$ php index.php luthier migrate`
+4. Access your new API and Enjoy!
 
 ## Other notes
 - Please read the docs of the Luthier-CI package if you've questions regarding routing and middleware. You can find the docs for that plugin [here](https://github.com/ingeniasoftware/luthier-ci)
 - In order to run on an ODBC connection, it is highly advised that the ODBC Driver from CodeIgniter 3.0.6 replaces the current 3.1.9 driver so that the API may use it in conjunction with the Query Builder. Even with known security issues in the ODBC driver and Query Builder, this API will be operating on an intranet with no external access.
-- Update files manually that exist inside of the `application` folder as well as a modified version of the `index.php` 
- file if it exists
+- Update files manually that exist inside of the `application` folder as well as a modified version of the `index.php` file if it exists
   - Check the [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/installation/upgrading.html) for more information.
 
 ## CLI Commands
@@ -176,22 +178,53 @@ Where version is the version of the migration to run. If it's omitted, it will p
 
 Examples
 ````
-$ php index.php luthier migrate version
+$ php index.php luthier migrate
 ````
 This will migrate to the latest available version
 
 ````
-$ php index.php luthier migrate version 20170706025420
+$ php index.php luthier migrate 20170706025420
 ````
 This will run the  `20170706025420_create_table_users` migration file
 
 It's also possible to use one of these special values as version:
 
- - reverse: reverses ALL migrations
- - refresh: reverses ALL migrations and then proceeds to migrate to the latest available version
-
-Examples
+ - `reverse` reverses ALL migrations
 ````
 $ php index.php luthier migrate reverse
+````
+ - `refresh` reverses ALL migrations and then proceeds to migrate to the latest available version
+ ````
 $ php index.php luthier migrate refresh
 ````
+
+### Running the SQL File:
+Alternately, you may simply import the SQL file located at `APPPPATH/database/sql/rest_api.sql` into 
+your favorite RDBMS to get the desired tables.
+
+# TODO's
+A small list of things I would like to do by the version 2.0.0 release:
+
+ - ~~A small example using Codeigniter sessions.~~ (Released in v1.0.0)
+   - ~~Migration file~~
+   - ~~A controller~~
+   - ~~A model~~
+   - ~~Routes~~
+   - ~~Docs~~
+   
+ - Finish refactoring the migration files and get them working fully
+   - I am thinking that the `Luthier-CI` package is having issues when running migrations where all migrations do not run. i expect that this will be fixed for the 1.2.0 release 
+
+ - An example representation of JWT authentication. This should be ready by the 2.0.0 release.
+   - Using an JWTAuthMiddleware
+
+# License
+### MIT License
+
+Copyright 2019 Jason Napolitano
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

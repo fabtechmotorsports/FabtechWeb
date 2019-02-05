@@ -38,6 +38,9 @@ class MY_Controller extends REST_Controller
     /**
      * Build application controller components upon class construction
      *
+     * @see \Logger::log()
+     * @see \send_log()
+     *
      * @param  string $config Optional REST Library config file
      */
     public function __construct(string $config = 'rest')
@@ -50,12 +53,14 @@ class MY_Controller extends REST_Controller
          * requests
          */
         if (is_cli() && ENVIRONMENT === 'development') {
+            // Load the CLI Helper
             load_helper('cli');
         }
 
         // Check to make sure we are running on PHP >= 7.2.0
-        if (PHP_VERSION < '7.2.0') {
-            die('PHP Version of 7.2.0 is required. Your PHP Version is ' . PHP_VERSION);
+        $minPhpVersion = '7.2.0';
+        if (PHP_VERSION < $minPhpVersion) {
+            die("PHP Version of {$minPhpVersion} is required. Your PHP Version is " . PHP_VERSION);
         }
     }
 
@@ -67,7 +72,6 @@ class MY_Controller extends REST_Controller
     public function __destruct()
     {
         parent::__destruct();
-
         unset($this->data);
     }
 
