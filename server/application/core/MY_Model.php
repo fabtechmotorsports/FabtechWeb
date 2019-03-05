@@ -320,6 +320,8 @@ class MY_Model extends CI_Model
     }
 
     /**
+     * Get bin information by passing an item number through
+     * 
      * @param $item_no
      *
      * @return array|bool|string
