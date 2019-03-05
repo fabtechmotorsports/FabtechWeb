@@ -86,28 +86,30 @@ class MY_Model extends CI_Model
     protected $_pkey = 'pkey';
 
     /**
-     * @var string
+     * The way we'd like to return the data
+     *
+     * @var string $return_type
      */
     protected $return_type = 'array';
 
     /**
      * An empty array for WHERE clauses
      *
-     * @var array
+     * @var array $where
      */
     protected $where;
 
     /**
      * An empty array for WHERE xxx IN yyy clauses
      *
-     * @var array
+     * @var array $_where_in
      */
     protected $_where_in;
 
     /**
      * An empty ORDER BY string
      *
-     * @var string
+     * @var string $order_by
      */
     protected $order_by = '';
 
@@ -536,7 +538,7 @@ class MY_Model extends CI_Model
     // ------------------------------------------------------------------------
 
     /**
-     * Remove the TRUE flag from the udf_5 field
+     * Remove the TRUE flag from the UDF5 field
      *
      * @param string $ord_no The order number for the query
      */
@@ -556,7 +558,7 @@ class MY_Model extends CI_Model
     // ------------------------------------------------------------------------
 
     /**
-     * Find all o
+     * Find all orders marked where the UDF5 !== NULL
      *
      * @param  string $order_no Order number for the query
      *
@@ -687,6 +689,15 @@ class MY_Model extends CI_Model
 
     }
 
+    // ------------------------------------------------------------------------
+
+    /**
+     * POP Order BOM Description
+     *
+     * @param $comp_item_no
+     *
+     * @return array|bool|string
+     */
     public function pop_order_bom_desc($comp_item_no)
     {
         // Build the query
@@ -791,4 +802,6 @@ class MY_Model extends CI_Model
             return false;
         }
     }
+
+    // ------------------------------------------------------------------------
 }
