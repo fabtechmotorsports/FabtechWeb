@@ -91,7 +91,7 @@ ROOT/
 
 ## Includes
  - A built-in `JWT` Library (See the example [Controller](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/controllers/JWTController.php), [Routes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/routes/api.php#L13) & [Docs](https://documenter.getpostman.com/view/1486787/RznBMKeo#3835e400-9fbc-4b9b-b90d-7a46da6e891d))
- - A Powerful `MY_Model` class brought to us by [Avenir](https://github.com/avenirer/CodeIgniter-MY_Model)
+ - A Powerful `MY_Model` class
  - Code Generator for Controllers, Middleware, Models, Helpers, Migrations and Libraries
  - `MY_Log` file for `Monolog` PSR3 Logger Integration
  - A simple `MY_Controller` class to extend for basic REST usage
