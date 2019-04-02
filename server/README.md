@@ -25,9 +25,6 @@ CodeIgniter framework and I wanted to keep the DRY KISS approach in all of my fu
 to allow it to be used for years to come with best practices at the forefront of boilerplate's design and structure.
 This is due to me wanting to eliminate the need to repeat tasks that are common when setting up an API focused
 'micro-framework' using Codeigniter.  
-
-I built this as a small scaffold for my API based projects and tried making it as 
-un-opinionated as possible. It contains a number of cool features for REST 
 APIs such as a built-in JWT library, static routes and middleware brought to us by the amazing 
 `Luthier-CI` package, a proper REST Controller library brought to us by Phil Sturgeon
 and Chris Kacerguis, a small but useful `MY_Controller` and an extensive 
@@ -45,24 +42,24 @@ I hope everyone enjoys this and finds it useful. Please feel free to offer
 any advice or issue PRs and fixes where you see fit. All credit for the 
 Codeigniter framework goes to the Codeigniter team at BCIT and credit for
 the composer dependencies goes to their respective authors. Without their
-work, this would've been a lot more difficult of a task =)
+work, this would've been a lot more time consuming task =)
 
 ## Folder Structure
 
 ```
 ROOT/
-├── application/        # APPPATH directory
-├── application/vendor/ # VENDORPATH directory
-    └── codeigniter/    # Codeigniter Framework
-        └── framework/
-            └── system/
-├── application/composer.json
+├── application/            # APPPATH directory
+    └── vendor              # VENDORPATH directory
+        └── codeigniter/    # Codeigniter Framework
+            └── framework/
+                └── system/ # BASEPATH directory
+    └── composer.json
 |
-├── public_html/        # FCPATH directory
-│   ├── web.config      # Prebuilt web.config file for IIS servers
-│   ├── .htaccess       # Prebuilt .htaccess
-│   ├── .env            # Prebuilt .env file
-│   ├── index.php       # Custom index.php file
+├── public_html/            # FCPATH directory
+│   ├── web.config          # Prebuilt web.config file for IIS servers
+│   ├── .htaccess           # Prebuilt .htaccess
+│   ├── index.php           # Custom index.php file
+├── .env                    # Prebuilt .env file
 └── 
 ```
 
@@ -85,6 +82,10 @@ ROOT/
  - [Standard Exceptions](https://github.com/crazycodr/standard-exceptions)
  - [Php Dotenv Library](https://github.com/vlucas/phpdotenv)
  - [Luthier-CI](https://github.com/ingeniasoftware/luthier-ci)
+ - [Monolog](https://github.com/Seldaek/monolog)
+ - [Faker](https://github.com/fzaninotto/Faker)
+
+## Includes
  - [Monolog](https://github.com/Seldaek/monolog)
  - [Faker](https://github.com/fzaninotto/Faker)
 
