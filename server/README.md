@@ -12,19 +12,21 @@
  - [Install notes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#install-notes)
  - [Other notes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#other-notes)
  - [CLI Commands](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#cli-commands)
- - [TODO's](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#todos)
  - [License](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate#license)
  
 # Synopsis
 
  
-This is an MVC boilerplate for REST APIs powered by PHP, JWT, Composer and Codeigniter 3 with CLI based code generation. If you'd like to see the Postman docs for the provided `Sessions`, `Home` & `JWT` examples, you can visit this [link](https://documenter.getpostman.com/view/1486787/RznBMKeo). To check out the official versioned releases of this repo, go [here](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases).
+This is an MVC boilerplate for REST APIs powered by PHP, JWT, Composer and Codeigniter 3 with CLI based code generation. To check out the official versioned releases of this repo, go [here](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/releases).
 
 I primarily build APIs and I absolutely love working with the 
 CodeIgniter framework and I wanted to keep the DRY KISS approach in all of my future API projects, while modernizing CodeIgniter 3
 to allow it to be used for years to come with best practices at the forefront of boilerplate's design and structure.
 This is due to me wanting to eliminate the need to repeat tasks that are common when setting up an API focused
 'micro-framework' using Codeigniter.  
+
+I built this as a small scaffold for my API based projects and tried making it as 
+un-opinionated as possible. It contains a number of cool features for REST 
 APIs such as a built-in JWT library, static routes and middleware brought to us by the amazing 
 `Luthier-CI` package, a proper REST Controller library brought to us by Phil Sturgeon
 and Chris Kacerguis, a small but useful `MY_Controller` and an extensive 
@@ -66,8 +68,8 @@ ROOT/
 ## Useful Links
 
 * [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
-* [CodeIgniter Framework](https://github.com/bcit-ci/CodeIgniter)
-* [CodeIgniter Translations](https://github.com/bcit-ci/codeigniter3-translations)
+* [CodeIgniter 3 Framework](https://github.com/bcit-ci/CodeIgniter)
+* [CodeIgniter 3 Translations](https://github.com/bcit-ci/codeigniter3-translations)
 * [RESTful API.net](https://restfulapi.net/)
 * [REST API Tutorial.com](https://www.restapitutorial.com/)
 
@@ -86,16 +88,12 @@ ROOT/
  - [Faker](https://github.com/fzaninotto/Faker)
 
 ## Includes
- - [Monolog](https://github.com/Seldaek/monolog)
- - [Faker](https://github.com/fzaninotto/Faker)
-
-## Includes
- - A built-in `JWT` Library (See the example [Controller](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/controllers/JWTController.php), [Routes](https://github.com/jason-napolitano/Codeigniter3-REST-Boilerplate/blob/master/application/routes/api.php#L13) & [Docs](https://documenter.getpostman.com/view/1486787/RznBMKeo#3835e400-9fbc-4b9b-b90d-7a46da6e891d))
- - A Powerful `MY_Model` class
+ - A lightweight, simple and powerful built-in `JWT` Library
+ - A Powerful `MY_Model` class brought to us by [Avenir](https://github.com/avenirer/CodeIgniter-MY_Model)
  - Code Generator for Controllers, Middleware, Models, Helpers, Migrations and Libraries
  - `MY_Log` file for `Monolog` PSR3 Logger Integration
  - A simple `MY_Controller` class to extend for basic REST usage
- - A revised `constants.php` with some cool, extra goodies
+ - A revised `constants.php` with some cool extra goodies
  - Luthier routing/middleware for Codeigniter 3
  - Chris Kacerguis/Phil Sturgeon's REST Library
  - Complete composer dependency control
@@ -103,9 +101,7 @@ ROOT/
  - Whoops Errors for Cool Kids integration
  - PHP Dotenv library integration
  - A series of robust helper files from CLI's to Databases
- - Migration files for all of the database tables, including `ci_sessions` and the REST Library
- - Example Controller, Route, Model and Migration files to demonstrate the API
-   - Example Postman documentation for this is included [here](https://documenter.getpostman.com/view/1486787/RznBMKeo#3835e400-9fbc-4b9b-b90d-7a46da6e891d)
+ - Migration files for all of the database tables, including database sessions and the REST Library components
  - And much more... It is best to just go ahead and take a look!
  
 ## Project Setup
@@ -134,16 +130,15 @@ Navigate to localhost:8080 to run the development server
  - Do NOT access the `public_html` directory directly from your browser [EG - `http:/mysite.com/public_html/`]. Always set your web server to 'point' to your `public_html` directory. This is done for security reasons.
 3. `$ cd path/to/application` and then run the `composer install` command
 
-If you want database sessions, and to use the included API examples:
+If you want database sessions:
 1. Go to `application/config/ENVIRONMENT/database.php` and enter your database credentials
 2. Go to `application/config/ENVIRONMENT/config.php` and change the session type to database sessions located on `line 382`
 3. Open your command line tool (EG - Git Bash) and run `$ cd path/to/public_html` then run the migration command `$ php index.php luthier migrate`
-4. Access your new API and Enjoy!
 
 ## Other notes
 - Please read the docs of the Luthier-CI package if you've questions regarding routing and middleware. You can find the docs for that plugin [here](https://github.com/ingeniasoftware/luthier-ci)
-- In order to run on an ODBC connection, it is highly advised that the ODBC Driver from CodeIgniter 3.0.6 replaces the current 3.1.9 driver so that the API may use it in conjunction with the Query Builder. Even with known security issues in the ODBC driver and Query Builder, this API will be operating on an intranet with no external access.
-- Update files manually that exist inside of the `application` folder as well as a modified version of the `index.php` file if it exists
+- Update files manually that exist inside of the `application` folder as well as the **modified version** of the `index.php` 
+ file when upgrading CodeIgniter 3 to a new version
   - Check the [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/installation/upgrading.html) for more information.
 
 ## CLI Commands
@@ -201,45 +196,15 @@ $ php index.php luthier migrate refresh
 
 ### Running the SQL File:
 Alternately, you may simply import the SQL file located at `APPPPATH/database/sql/rest_api.sql` into 
-your favorite RDBMS to get the desired tables.
-
-# TODO's
-A small list of things I would like to do by the version 2.0.0 release:
-
- - ~~A small example using Codeigniter sessions.~~ (Released in v1.0.0)
-   - ~~Migration file~~
-   - ~~A controller~~
-   - ~~A model~~
-   - ~~Routes~~
-   - ~~Docs~~
-   
- - Finish refactoring the migration files and get them working fully
-   - I am thinking that the `Luthier-CI` package is having issues when running migrations where all migrations do not run. i expect that this will be fixed for the 1.2.0 release 
-
- - An example representation of JWT authentication. This should be ready by the 2.0.0 release.
-   - Using an JWTAuthMiddleware
+your favorite MySQL/MariaDB RDBMS to get the desired tables.
 
 # License
-## BSD 2-Clause License
+### MIT License
 
-Copyright (c) 2019, Jason Napolitano
+Copyright 2019 Jason Napolitano
 
-Redistribution and use in source and binary forms,
-with or without modification, are permitted provided that the following conditions are
-met:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-1. Redistributions of source code must retain the above copyright notice, this list of
-conditions and the following disclaimer.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of
-conditions and the following disclaimer in the documentation and/or other materials provided
-with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
-IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
-CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
-IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
