@@ -1,0 +1,4 @@
+server/application/vendor
+server/application/writable/*
+server/application/config/development
+server/application/composer.lock
