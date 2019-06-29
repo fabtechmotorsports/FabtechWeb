@@ -28,7 +28,7 @@
   import Container      from './components/content/Container.vue';
   import FooterNav      from './components/navbars/FooterNav.vue';
   import NavbarNav      from './components/navbars/NavbarNav.vue';
-  import LabelGenerator from "./components/labels/LabelGenerator.vue";
+  import LabelGenerator from "./components/modals/LabelGenerator.vue";
 
   export default {
     head: {
